@@ -18,9 +18,18 @@ class DBHelper:
         self.con.commit()
         print("User saved to db") 
 
+    # Fetch_All
+    def fetch_all(self):
+        query = "Select * from user"
+        cur = self.con.cursor()
+        cur.execute(query)
+        for row in cur:
+            print(row)
+
 helper = DBHelper()
-helper.insert_user(5200, "Ishtiyaque Hussain", "9876543210")
-helper.insert_user(3306, "Ibrahim ", "3465433443")
-helper.insert_user(4000, "Hussain", "98987646576")
-helper.insert_user(2020, "Jibran", "2378972109")
-helper.insert_user(1098, "Iqbal", "3406411135")
+# helper.insert_user(5200, "Ishtiyaque Hussain", "9876543210")
+# helper.insert_user(3306, "Ibrahim ", "3465433443")
+# helper.insert_user(4000, "Hussain", "98987646576")
+# helper.insert_user(2020, "Jibran", "2378972109")
+# helper.insert_user(1098, "Iqbal", "3406411135")
+helper.fetch_all()
