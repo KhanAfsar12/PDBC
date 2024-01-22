@@ -42,6 +42,13 @@ class DBHelper:
 
 
 # update
+    def update(self, userId, newName, newPhone):
+        query = "update user set userName='{}', phone='{}' where userId={}".format(newName, newPhone, userId)
+        print(query)
+        cur = self.con.cursor()
+        cur.execute(query)
+        self.con.commit()
+        print("Updated")
         
 
 helper = DBHelper()
@@ -55,5 +62,7 @@ helper = DBHelper()
 
 # helper.delete(3306)
 # helper.delete(1098)
+
+helper.update(2020, 'Noman', '2345945676')
 
 
