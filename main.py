@@ -16,13 +16,21 @@ def main():
         try:
             choice = int(input())
             if choice == 1:
-                db.insert_user(2222, "Meraj", "2343879934")
+                U_Id = int(input("Enter your Id: "))
+                U_name = input("Enter your name: ")
+                U_phone = input("Enter your phone: ")
+                db.insert_user(U_Id,U_name,U_phone)
             elif choice == 2:
                 db.fetch_all()
             elif choice == 3:
-                db.delete()
+                U_Id = input("Enter user id which you want to delete")
+                db.delete(U_Id)
             elif choice == 4:
-                db.update(2222, "Ajmal", "342349648")
+                U_Id = int(input("Enter Id of uzer: "))
+                U_name = input("Enter new user: ")
+                U_phone = input("Enter new phone: ")
+
+                db.update(U_Id, U_name, U_phone)
             elif choice == 5:
                 break
             else:
