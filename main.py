@@ -24,7 +24,25 @@ class DBHelper:
         cur = self.con.cursor()
         cur.execute(query)
         for row in cur:
-            print(row)
+            print("-----------------------------------------------------------------------------------------------------------------------------------------")
+            print('User Id: ', row[0])
+            print('User Name: ', row[1])
+            print('User Phone: ', row[2])
+            print("-----------------------------------------------------------------------------------------------------------------------------------------")
+            print()
+
+
+# Delete data
+    def delete(self, userId):
+        query = "delete from user where userId={}".format(userId)
+        cur = self.con.cursor()
+        cur.execute(query)
+        self.con.commit()   
+        print("deleted")
+
+
+# update
+        
 
 helper = DBHelper()
 # helper.insert_user(5200, "Ishtiyaque Hussain", "9876543210")
@@ -32,4 +50,10 @@ helper = DBHelper()
 # helper.insert_user(4000, "Hussain", "98987646576")
 # helper.insert_user(2020, "Jibran", "2378972109")
 # helper.insert_user(1098, "Iqbal", "3406411135")
-helper.fetch_all()
+
+# helper.fetch_all()
+
+# helper.delete(3306)
+# helper.delete(1098)
+
+
