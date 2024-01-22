@@ -43,8 +43,9 @@ class DBHelper:
 
 
 # update
-    def update(self, userId, newName, newPhone):
-        query = "update user set userName='{}', phone='{}' where userId={}".format(newName, newPhone, userId)
+    # update
+    def update(self, userId, newname, newPhone):
+        query = "update user set username='{}', phone='{}' where userId={}".format(newname, newPhone, userId)
         print(query)
         cur = self.con.cursor()
         cur.execute(query)
